@@ -4,10 +4,12 @@ import UniversalRouter from 'universal-router';
 import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignupPage';
 
 const routes = [
   ...HomePage,
-  ...LoginPage
+  ...LoginPage,
+  ...SignUpPage
 ];
 
 function resolveRoute(ctx) {

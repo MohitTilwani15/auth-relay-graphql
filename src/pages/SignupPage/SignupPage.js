@@ -3,9 +3,9 @@ import RelayPropTypes from 'react-relay/lib/RelayPropTypes';
 import PropTypes from 'prop-types';
 
 import AuthForm from '../../components/AuthForm';
-import loginMutation from '../../mutations/login';
+import signupMutation from '../../mutations/signup';
 
-class LoginForm extends Component {
+class SignUpForm extends Component {
   constructor(props) {
     super(props);
 
@@ -18,14 +18,14 @@ class LoginForm extends Component {
   };
 
   onSubmit({ email, password }) {
-    loginMutation.commit(this.context.relay.environment, email, password)
-      .then(() => {
-        this.context.history.push('/');
-      })
-      .catch((err) => {
-        console.log(err);
-        this.setState({ error: err.message });
-      });
+    signupMutation.commit(this.context.relay.environment, email, password)
+    .then(() => {
+      this.context.history.push('/')
+    })
+    .catch((err) => {
+      console.log(err);
+      this.setState({ error: err.message });
+    });
   }
 
   render() {
@@ -40,4 +40,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+export default SignUpForm;
