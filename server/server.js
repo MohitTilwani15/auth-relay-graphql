@@ -52,4 +52,6 @@ app.use('/graphql', expressGraphQL({
   graphiql: true
 }));
 
-module.exports = app;
+app.listen(4000, () => {
+  console.log('listening');
+})

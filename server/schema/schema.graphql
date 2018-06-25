@@ -14,5 +14,6 @@ type RootQueryType {
 }
 
 type UserType {
+  id: ID
   email: String
 }
